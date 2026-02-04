@@ -1,0 +1,66 @@
+# Site settings
+title: Rex Wang's Blog
+description: >-
+  Technical insights on Kubernetes, Java, DevOps, and cloud-native technologies.
+  Notes from a developer's journey.
+baseurl: ""
+url: "https://chunpingwang.github.io"
+
+# Author settings
+author:
+  name: Rex Wang
+  email: ""
+  github: ChunPingWang
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Minima theme settings
+minima:
+  skin: auto
+  social_links:
+    - { platform: github, user_url: "https://github.com/ChunPingWang" }
+
+# Permalink format
+permalink: /:year/:month/:day/:title/
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Collections for pages
+collections:
+  pages:
+    output: true
+    permalink: /:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Rex Wang"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Pagination (optional)
+paginate: 10
+paginate_path: "/page/:num/"
