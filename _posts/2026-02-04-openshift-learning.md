@@ -1,45 +1,13 @@
 ---
 layout: single
-title: "OpenShift / Kubernetes 實戰學習指南"
-date: 2026-02-04 12:00:00 +0800
-categories: [kubernetes, devops]
-tags: [openshift, kubernetes, container, crc]
+title: "OpenShift Learning"
+date: 2026-02-04 21:00:00 +0800
+categories: [kubernetes]
+tags: [openshift, kubernetes, container, red-hat]
 toc: true
 toc_sticky: true
 ---
 
-使用 CRC (CodeReady Containers) 環境進行 OpenShift/Kubernetes 實作練習的完整學習資源。
-
-## 專案特色
-
-- 📚 **循序漸進**：從 Level 1 到 Level 10，難度逐步提升
-- 🔧 **動手實作**：每個練習都有完整的指令和預期結果
-- 🇹🇼 **繁體中文**：全中文說明，適合台灣學習者
-- 💻 **本機環境**：使用 CRC，無需雲端費用
-- 📋 **EX280 準備**：包含模擬考題，適合認證準備
-
-## 課程內容
-
-| Level | 主題 | 難度 |
-|-------|------|------|
-| 1 | 基礎操作 | ⭐ |
-| 2 | 應用部署 | ⭐ |
-| 3 | 配置管理 | ⭐⭐ |
-| 4 | 網路與服務 | ⭐⭐ |
-| 5 | 儲存管理 | ⭐⭐ |
-| 6 | 安全性 | ⭐⭐⭐ |
-| 7 | 監控與日誌 | ⭐⭐⭐ |
-| 8 | CI/CD Pipeline | ⭐⭐⭐⭐ |
-| 9 | Operator 開發 | ⭐⭐⭐⭐ |
-| 10 | 綜合情境 | ⭐⭐⭐⭐ |
-
-## OpenShift vs Kubernetes
-
-| 功能 | Kubernetes | OpenShift |
-|------|------------|-----------|
-| 網路路由 | 需安裝 Ingress Controller | 內建 Route |
-| 映像建置 | 需外部 CI/CD | 內建 S2I |
-| 安全性 | 基本 RBAC | RBAC + SCC |
-| Web 控制台 | 需額外安裝 | 內建企業級控制台 |
+OpenShift 學習筆記與實作練習。
 
 **Repository:** [openshift-learning](https://github.com/ChunPingWang/openshift-learning)

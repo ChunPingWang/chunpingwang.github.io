@@ -1,13 +1,13 @@
 ---
 layout: single
-title: ".NET RBAC SSO POC"
+title: "DotNet RBAC SSO PoC"
 date: 2026-01-18 05:00:00 +0800
-categories: [dotnet]
-tags: [dotnet, rbac, sso, security, authentication]
+categories: [security]
+tags: [dotnet, rbac, sso, authentication, authorization]
+toc: true
+toc_sticky: true
 ---
 
-.NET 角色型存取控制 (RBAC) 與單一登入 (SSO) 實作範例。
-
-**Language:** C#
+.NET 角色權限控制與單一登入概念驗證。
 
 **Repository:** [dotnet-rbac-sso-poc](https://github.com/ChunPingWang/dotnet-rbac-sso-poc)
