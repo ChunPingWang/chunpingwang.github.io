@@ -10,10 +10,12 @@ author_profile: true
 
 ## 主要內容
 
-- 🐳 **容器技術** - Docker、Harbor、容器編排
-- ☸️ **Kubernetes** - 叢集管理、部署策略、最佳實踐
-- ☕ **Java 開發** - Spring Boot、Clean Architecture、設計模式
+- ☕ **Java** - 核心技術、效能優化、最佳實踐
+- 🌱 **Spring** - Spring Boot、Spring Cloud、微服務架構
+- 🎯 **OOP** - 物件導向設計、SOLID 原則、重構技巧
+- 🧩 **Design Pattern** - 設計模式、Clean Architecture、架構設計
 - 🔧 **DevOps** - CI/CD、Tanzu Application Platform、自動化
-- 🤖 **AI 輔助開發** - GitHub Copilot、智慧開發工具
+- 🐳 **Container** - Docker、Harbor、容器化技術
+- ☸️ **Kubernetes** - 叢集管理、部署策略、雲端原生
 
 歡迎瀏覽我的文章，也歡迎到 [GitHub](https://github.com/ChunPingWang) 看看我的專案！
