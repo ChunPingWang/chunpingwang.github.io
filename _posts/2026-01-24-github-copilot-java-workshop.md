@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "GitHub Copilot 工作坊：AI 輔助 Java 開發"
-date: 2026-02-04 16:00:00 +0800
+date: 2026-01-24 12:00:00 +0800
 categories: [java, ai]
 tags: [github-copilot, java, spring-boot, ai, 生產力]
 toc: true

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Harbor 容器映像倉庫安裝與設定"
-date: 2026-02-04 12:00:00 +0800
+date: 2026-01-27 12:00:00 +0800
 categories: [devops, 容器]
 tags: [harbor, docker, registry, kubernetes, 憑證]
 toc: true

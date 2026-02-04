@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "在 Minikube 上安裝 Tanzu Application Platform"
-date: 2026-02-04 13:00:00 +0800
+date: 2026-01-26 12:00:00 +0800
 categories: [devops, kubernetes]
 tags: [tanzu, tap, vmware, kubernetes, minikube, 平台工程]
 toc: true

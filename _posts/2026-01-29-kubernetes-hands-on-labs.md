@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Kubernetes 實戰練習：從零到生產"
-date: 2026-02-04 15:00:00 +0800
+date: 2026-01-29 12:00:00 +0800
 categories: [kubernetes, 教學]
 tags: [kubernetes, k8s, kind, 容器, devops, 實作]
 toc: true

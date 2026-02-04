@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Kubernetes 入門指南"
-date: 2026-02-04 11:00:00 +0800
+date: 2026-01-28 12:00:00 +0800
 categories: [kubernetes, 教學]
 tags: [kubernetes, k8s, 容器, devops]
 toc: true
