@@ -71,6 +71,10 @@ kramdown:
     block:
       line_numbers: true
 
+# Include _pages
+include:
+  - _pages
+
 # Exclude from build
 exclude:
   - Gemfile
