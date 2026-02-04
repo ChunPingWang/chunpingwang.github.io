@@ -1,27 +1,29 @@
 ---
-layout: post
-title: "Getting Started with Kubernetes"
+layout: single
+title: "Kubernetes 入門指南"
 date: 2026-02-04 11:00:00 +0800
-categories: [kubernetes, tutorial]
-tags: [kubernetes, k8s, containers, devops]
+categories: [kubernetes, 教學]
+tags: [kubernetes, k8s, 容器, devops]
+toc: true
+toc_sticky: true
 ---
 
-Kubernetes has become the de facto standard for container orchestration. In this post, I'll share some fundamentals to help you get started.
+Kubernetes 已經成為容器編排的業界標準。在這篇文章中，我將分享一些基礎知識幫助你入門。
 
-## What is Kubernetes?
+## 什麼是 Kubernetes？
 
-Kubernetes (K8s) is an open-source container orchestration platform that automates:
+Kubernetes（K8s）是一個開源的容器編排平台，能夠自動化：
 
-- Deployment of containerized applications
-- Scaling based on demand
-- Management of container lifecycles
-- Load balancing and service discovery
+- 容器化應用程式的部署
+- 根據需求進行擴展
+- 管理容器生命週期
+- 負載平衡與服務發現
 
-## Key Concepts
+## 核心概念
 
 ### Pods
 
-The smallest deployable unit in Kubernetes. A pod can contain one or more containers.
+Kubernetes 中最小的可部署單位。一個 Pod 可以包含一個或多個容器。
 
 ```yaml
 apiVersion: v1
@@ -38,7 +40,7 @@ spec:
 
 ### Deployments
 
-Manage the desired state of your application:
+管理應用程式的期望狀態：
 
 ```yaml
 apiVersion: apps/v1
@@ -62,7 +64,7 @@ spec:
 
 ### Services
 
-Expose your applications:
+對外公開你的應用程式：
 
 ```yaml
 apiVersion: v1
@@ -78,8 +80,8 @@ spec:
   type: ClusterIP
 ```
 
-## Learn More
+## 延伸學習
 
-Check out my [K8sLabs repository](https://github.com/ChunPingWang/K8sLabs) for hands-on exercises.
+查看我的 [K8sLabs 專案](https://github.com/ChunPingWang/K8sLabs) 獲取更多實戰練習。
 
-Happy learning!
+祝學習愉快！

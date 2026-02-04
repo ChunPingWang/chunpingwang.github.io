@@ -1,29 +1,63 @@
 # Site settings
-title: Rex Wang's Blog
+title: Rex Wang 技術部落格
+subtitle: "雲端原生技術 • Kubernetes • Java • DevOps"
+name: Rex Wang
 description: >-
-  Technical insights on Kubernetes, Java, DevOps, and cloud-native technologies.
-  Notes from a developer's journey.
+  分享 Kubernetes、Java、DevOps 與雲端原生技術的實戰經驗與學習筆記。
 baseurl: ""
 url: "https://chunpingwang.github.io"
+repository: "ChunPingWang/ChunPingWang.github.io"
 
-# Author settings
-author:
-  name: Rex Wang
-  email: ""
-  github: ChunPingWang
+# Language
+locale: "zh-TW"
 
-# Build settings
-theme: minima
+# Theme - Minimal Mistakes (professional IT style)
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "dark" # Options: air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-include-cache
+  - jekyll-paginate
 
-# Minima theme settings
-minima:
-  skin: auto
-  social_links:
-    - { platform: github, user_url: "https://github.com/ChunPingWang" }
+# Author settings
+author:
+  name: "Rex Wang"
+  avatar: "/assets/images/avatar.png"
+  bio: "雲端原生技術愛好者<br>專注於 Kubernetes、Java 與 DevOps"
+  location: "Taiwan"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ChunPingWang"
+
+# Site footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ChunPingWang"
+
+# Reading time
+read_time: true
+words_per_minute: 150
+
+# Comments (disabled by default)
+comments:
+  provider: false
+
+# Search
+search: true
+search_full_content: true
+
+# Analytics (optional - add your tracking ID)
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "YOUR-TRACKING-ID"
 
 # Permalink format
 permalink: /:year/:month/:day/:title/
@@ -33,6 +67,9 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 
 # Exclude from build
 exclude:
@@ -40,27 +77,40 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+  - node_modules
 
-# Collections for pages
-collections:
-  pages:
-    output: true
-    permalink: /:title/
+# Pagination
+paginate: 10
+paginate_path: /page:num/
+
+# Category and tag archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
 # Default front matter
 defaults:
+  # Posts
   - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
-      author: "Rex Wang"
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      show_date: true
+      toc: true
+      toc_sticky: true
+  # Pages
   - scope:
       path: ""
-      type: "pages"
+      type: pages
     values:
-      layout: "page"
-
-# Pagination (optional)
-paginate: 10
-paginate_path: "/page/:num/"
+      layout: single
+      author_profile: true

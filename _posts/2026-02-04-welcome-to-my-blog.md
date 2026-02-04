@@ -1,31 +1,33 @@
 ---
-layout: post
-title: "Welcome to My Blog"
+layout: single
+title: "歡迎來到我的技術部落格"
 date: 2026-02-04 10:00:00 +0800
-categories: [general]
-tags: [welcome, introduction]
+categories: [一般]
+tags: [歡迎, 介紹]
+toc: true
+toc_sticky: true
 ---
 
-Welcome to my new blog! I'm excited to share my journey as a developer working with cloud-native technologies.
+歡迎來到我的技術部落格！我很高興能在這裡分享我在雲端原生技術領域的學習與實戰經驗。
 
-## What to Expect
+## 部落格內容
 
-This blog will cover topics including:
+這個部落格將涵蓋以下主題：
 
-- **Kubernetes** tutorials and best practices
-- **Java** architecture patterns and Spring Framework
-- **DevOps** tools and workflows
-- **Cloud Native** application development
+- **Kubernetes** - 容器編排與叢集管理
+- **Java** - 架構設計與 Spring Framework
+- **DevOps** - CI/CD 工具與自動化流程
+- **雲端原生** - 現代化應用程式開發
 
-## My Background
+## 我的背景
 
-I've been working with technologies like Harbor, Tanzu Application Platform, and Kubernetes in production environments. Through this blog, I'll share the lessons I've learned and practical guides to help others.
+我在生產環境中使用過 Harbor、Tanzu Application Platform 和 Kubernetes 等技術。透過這個部落格，我將分享實際遇到的問題與解決方案。
 
-## Getting Started
+## 開始閱讀
 
-If you're new here, check out:
+如果你是新訪客，推薦你從以下內容開始：
 
-- [About Me](/about/) - Learn more about my background
-- [GitHub Profile](https://github.com/ChunPingWang) - See my projects
+- [關於我](/about/) - 了解更多我的背景
+- [GitHub](https://github.com/ChunPingWang) - 查看我的開源專案
 
-Stay tuned for more posts!
+敬請期待更多文章！

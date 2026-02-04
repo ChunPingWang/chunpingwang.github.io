@@ -1,53 +1,55 @@
 ---
-layout: post
-title: "Implementing Clean Architecture with Spring Boot"
+layout: single
+title: "使用 Spring Boot 實作 Clean Architecture"
 date: 2026-02-04 14:00:00 +0800
-categories: [java, architecture]
-tags: [clean-architecture, spring-boot, java, design-patterns, hexagonal]
+categories: [java, 架構]
+tags: [clean-architecture, spring-boot, java, 設計模式, hexagonal]
+toc: true
+toc_sticky: true
 ---
 
-Clean Architecture, popularized by Robert C. Martin (Uncle Bob), helps create systems that are independent of frameworks, testable, and maintainable. Here's how I implement it with Spring Boot.
+Clean Architecture 由 Robert C. Martin（Uncle Bob）提出，幫助我們建立獨立於框架、可測試且易於維護的系統。以下是我在 Spring Boot 中實作的方式。
 
-## Why Clean Architecture?
+## 為什麼需要 Clean Architecture？
 
-Traditional layered architecture often leads to:
-- Tight coupling between business logic and frameworks
-- Difficulty testing without infrastructure
-- Database-driven design instead of domain-driven
+傳統的分層架構常導致：
+- 業務邏輯與框架緊密耦合
+- 難以在沒有基礎設施的情況下測試
+- 以資料庫為中心而非領域為中心的設計
 
-Clean Architecture solves these by enforcing **dependency rules** - outer layers depend on inner layers, never the reverse.
+Clean Architecture 透過強制執行**依賴規則**來解決這些問題——外層依賴內層，反過來則不行。
 
-## The Layers
+## 架構分層
 
 ```
 ┌─────────────────────────────────────────┐
-│           Frameworks & Drivers          │  ← Controllers, DB, Web
+│           框架與驅動程式                 │  ← Controllers, DB, Web
 ├─────────────────────────────────────────┤
-│          Interface Adapters             │  ← Presenters, Gateways
+│           介面轉接器                     │  ← Presenters, Gateways
 ├─────────────────────────────────────────┤
-│           Application Business          │  ← Use Cases
+│           應用程式業務                   │  ← Use Cases
 ├─────────────────────────────────────────┤
-│          Enterprise Business            │  ← Entities, Domain
+│           企業業務                       │  ← Entities, Domain
 └─────────────────────────────────────────┘
 ```
 
-## Project Structure
+## 專案結構
 
 ```
 src/main/java/com/example/
-├── domain/                    # Enterprise Business Rules
+├── domain/                    # 企業業務規則
 │   ├── entity/
 │   │   └── Task.java
 │   └── repository/
-│       └── TaskRepository.java  # Interface only
-├── application/               # Application Business Rules
+│       └── TaskRepository.java  # 僅介面
+├── application/               # 應用程式業務規則
 │   ├── usecase/
 │   │   ├── CreateTaskUseCase.java
 │   │   └── GetTaskUseCase.java
 │   └── port/
-│       ├── in/               # Input ports
-│       └── out/              # Output ports
-├── adapter/                   # Interface Adapters
+│       ├── in/               # 輸入埠
+│       └── out/              # 輸出埠
+├── adapter/                   # 介面轉接器
 │   ├── in/
 │   │   └── web/
 │   │       └── TaskController.java
@@ -55,15 +57,15 @@ src/main/java/com/example/
 │       └── persistence/
 │           ├── TaskJpaRepository.java
 │           └── TaskPersistenceAdapter.java
-└── infrastructure/            # Frameworks & Drivers
+└── infrastructure/            # 框架與驅動程式
     └── config/
         └── BeanConfig.java
 ```
 
-## Domain Entity
+## 領域實體
 
 ```java
-// Domain layer - no framework dependencies
+// 領域層 - 不依賴任何框架
 public class Task {
     private Long id;
     private String title;
@@ -73,14 +75,14 @@ public class Task {
         this.completed = true;
     }
 
-    // Business rules here
+    // 業務規則放這裡
 }
 ```
 
-## Use Case
+## 使用案例
 
 ```java
-// Application layer
+// 應用程式層
 public class CreateTaskUseCase {
     private final TaskRepository repository;
 
@@ -95,10 +97,10 @@ public class CreateTaskUseCase {
 }
 ```
 
-## Repository Interface (Port)
+## Repository 介面（Port）
 
 ```java
-// Domain layer - interface only
+// 領域層 - 僅定義介面
 public interface TaskRepository {
     Task save(Task task);
     Optional<Task> findById(Long id);
@@ -106,10 +108,10 @@ public interface TaskRepository {
 }
 ```
 
-## Persistence Adapter
+## 持久化轉接器
 
 ```java
-// Adapter layer - implements the port
+// 轉接器層 - 實作 port
 @Component
 public class TaskPersistenceAdapter implements TaskRepository {
     private final TaskJpaRepository jpaRepository;
@@ -122,15 +124,15 @@ public class TaskPersistenceAdapter implements TaskRepository {
 }
 ```
 
-## Benefits
+## 優點
 
-1. **Testability** - Test use cases without Spring context
-2. **Flexibility** - Swap databases or frameworks easily
-3. **Maintainability** - Clear boundaries and responsibilities
-4. **Focus** - Business logic is isolated and clear
+1. **可測試性** - 無需 Spring 容器即可測試 Use Case
+2. **彈性** - 輕鬆替換資料庫或框架
+3. **可維護性** - 明確的邊界與職責
+4. **專注度** - 業務邏輯獨立且清晰
 
-## Project Repository
+## 專案連結
 
-Explore my implementation: [clean_architecture_with_Spring](https://github.com/ChunPingWang/clean_architecture_with_Spring)
+探索我的實作：[clean_architecture_with_Spring](https://github.com/ChunPingWang/clean_architecture_with_Spring)
 
-Clean Architecture requires more upfront structure, but pays dividends in long-term maintainability.
+Clean Architecture 需要更多前期規劃，但在長期維護上會帶來豐厚回報。

@@ -1,52 +1,54 @@
 ---
-layout: post
-title: "Setting Up Harbor Container Registry with Self-Signed Certificates"
+layout: single
+title: "Harbor 容器映像倉庫安裝與設定"
 date: 2026-02-04 12:00:00 +0800
-categories: [devops, containers]
-tags: [harbor, docker, registry, kubernetes, certificates]
+categories: [devops, 容器]
+tags: [harbor, docker, registry, kubernetes, 憑證]
+toc: true
+toc_sticky: true
 ---
 
-Harbor is an open-source container image registry that provides essential features like security scanning, image signing, and role-based access control. In this post, I'll share my notes on setting up Harbor with self-signed certificates.
+Harbor 是一個開源的容器映像倉庫，提供安全掃描、映像簽章和角色型存取控制等重要功能。本文將分享如何使用自簽憑證設定 Harbor。
 
-## Why Harbor?
+## 為什麼選擇 Harbor？
 
-When working with Kubernetes in development or air-gapped environments, you need a private container registry. Harbor offers:
+在開發環境或隔離網路環境中使用 Kubernetes 時，你需要一個私有容器倉庫。Harbor 提供：
 
-- **Security scanning** for vulnerabilities
-- **Image replication** across registries
-- **Role-based access control**
-- **Audit logging**
-- **Helm chart repository**
+- **安全掃描** - 檢測漏洞
+- **映像複製** - 跨倉庫同步
+- **角色型存取控制** - 權限管理
+- **稽核日誌** - 操作記錄
+- **Helm Chart 倉庫** - 圖表管理
 
-## Generating Self-Signed Certificates
+## 產生自簽憑證
 
-First, create SSL certificates for Harbor:
+首先，為 Harbor 建立 SSL 憑證：
 
 ```bash
-# Generate CA certificate
+# 產生 CA 憑證
 openssl genrsa -out ca.key 4096
 openssl req -x509 -new -nodes -sha512 -days 3650 \
   -subj "/CN=harbor-ca" \
   -key ca.key \
   -out ca.crt
 
-# Generate server certificate
+# 產生伺服器憑證
 openssl genrsa -out harbor.key 4096
 openssl req -sha512 -new \
   -subj "/CN=harbor.example.com" \
   -key harbor.key \
   -out harbor.csr
 
-# Sign the certificate
+# 簽署憑證
 openssl x509 -req -sha512 -days 3650 \
   -CA ca.crt -CAkey ca.key -CAcreateserial \
   -in harbor.csr \
   -out harbor.crt
 ```
 
-## Configuring Docker to Trust the Certificate
+## 設定 Docker 信任憑證
 
-### On Linux
+### Linux 系統
 
 ```bash
 sudo mkdir -p /etc/docker/certs.d/harbor.example.com
@@ -54,26 +56,26 @@ sudo cp ca.crt /etc/docker/certs.d/harbor.example.com/
 sudo systemctl restart docker
 ```
 
-### On macOS
+### macOS 系統
 
 ```bash
 sudo security add-trusted-cert -d -r trustRoot \
   -k /Library/Keychains/System.keychain ca.crt
-# Restart Docker Desktop
+# 重新啟動 Docker Desktop
 ```
 
-### In Minikube
+### Minikube 環境
 
 ```bash
 minikube start --insecure-registry="harbor.example.com"
-# Or copy certificates to minikube
+# 或將憑證複製到 minikube
 minikube cp ca.crt /etc/docker/certs.d/harbor.example.com/ca.crt
 ```
 
-## Installing Harbor
+## 安裝 Harbor
 
-1. Download from [Harbor releases](https://github.com/goharbor/harbor/releases)
-2. Extract and configure `harbor.yml`:
+1. 從 [Harbor releases](https://github.com/goharbor/harbor/releases) 下載
+2. 解壓縮並設定 `harbor.yml`：
 
 ```yaml
 hostname: harbor.example.com
@@ -84,14 +86,14 @@ https:
 harbor_admin_password: YourSecurePassword
 ```
 
-3. Run the installer:
+3. 執行安裝程式：
 
 ```bash
 ./install.sh --with-trivy
 ```
 
-## Learn More
+## 延伸閱讀
 
-Check out my detailed notes: [harbor-install-note](https://github.com/ChunPingWang/harbor-install-note)
+查看我的詳細筆記：[harbor-install-note](https://github.com/ChunPingWang/harbor-install-note)
 
-Harbor is essential for any serious Kubernetes deployment. Take the time to set it up properly!
+Harbor 是任何正式 Kubernetes 部署的必備工具，值得花時間好好設定！
