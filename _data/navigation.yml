@@ -3,6 +3,8 @@ main:
     url: /
   - title: "關於"
     url: /about/
+  - title: "專案總覽"
+    url: /projects/
   - title: "分類"
     url: /categories/
   - title: "標籤"
