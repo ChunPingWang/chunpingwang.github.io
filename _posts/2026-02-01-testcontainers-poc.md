@@ -10,4 +10,4 @@ toc_sticky: true
 
 Testcontainers 整合測試概念驗證，使用容器化的資料庫與服務進行測試。
 
-**Repository:** [testcontainers-poc](https://github.com/ChunPingWang/testcontainers-poc)
+**Repository:** [testcontainers-tutorial](https://github.com/ChunPingWang/testcontainers-tutorial)

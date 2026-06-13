@@ -73,7 +73,7 @@ toc_sticky: true
 | [resilience4j-poc](https://github.com/ChunPingWang/resilience4j-poc) | Resilience4j 容錯機制 PoC |
 | [head-first-design-patterns-kotlin](https://github.com/ChunPingWang/head-first-design-patterns-kotlin) | Kotlin 設計模式實作 |
 | [kotlin-exercise](https://github.com/ChunPingWang/kotlin-exercise) | Kotlin 語言練習 |
-| [testcontainers-poc](https://github.com/ChunPingWang/testcontainers-poc) | Testcontainers 整合測試 PoC |
+| [testcontainers-tutorial](https://github.com/ChunPingWang/testcontainers-tutorial) | Testcontainers 整合測試 PoC |
 | [geode-poc](https://github.com/ChunPingWang/geode-poc) | Apache Geode 分散式快取 PoC |
 | [scdf-streaming-poc](https://github.com/ChunPingWang/scdf-streaming-poc) | Spring Cloud Data Flow 串流處理 |
 

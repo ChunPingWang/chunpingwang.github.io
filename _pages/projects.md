@@ -141,6 +141,47 @@ IaC、CI/CD、可觀測性、開發者平台與 AI 輔助開發。
 - [matlab-tutorial](https://github.com/ChunPingWang/matlab-tutorial) — MATLAB
 - [engineering-linalg-tutorial](https://github.com/ChunPingWang/engineering-linalg-tutorial) — 工程線性代數
 
+## 🔒 私有專案
+
+以下為**私有 (Private)** 儲存庫，未公開原始碼，因此不提供連結。內容多為企業／客戶領域系統、認證練習與內部 PoC。
+
+> 若你對其中專案有興趣或有合作需求，歡迎**直接與我本人聯繫**（見[關於我](/about/)頁面的 GitHub / LinkedIn）。
+
+### 設計模式 / 架構
+- `gof-design-patterns-java` 🔒 — GoF 設計模式 (Java)
+- `gof-design-patterns-cpp` 🔒 — GoF 設計模式 (C++)
+- `teddy-dddcleankanban` 🔒 — DDD + Clean Architecture 看板
+
+### Spring / Java 學習
+- `spring-framework-6-cert-preparation` 🔒 — Spring Framework 6 認證準備
+- `core-spring-labfiles` 🔒 · `spring-boot-labfiles` 🔒 — Spring 官方課程練習
+- `Spring_in_Action4` 🔒 — Spring in Action 讀書筆記
+
+### 微服務 / 企業系統
+- `ec-microservices` 🔒 — 電商微服務
+- `insurance_management_architecture_demo` 🔒 — 保險管理架構示範
+- `policy-core-service` 🔒 — 保單核心服務
+- `order-app` 🔒 · `microservices-demo` 🔒 — 微服務範例
+- `SpringWithKafka` 🔒 — Spring + Kafka
+- `Restful-API-client` 🔒 — RESTful API 用戶端
+
+### AI / GraphQL
+- `ollama-qdrant-dify-tutorial` 🔒 — Ollama + Qdrant + Dify
+- `spring-graphql-example` 🔒 — Spring GraphQL 範例
+
+### 金融 / 銀行領域（客戶／內部專案）
+- `banking-benefit-service` 🔒 · `banking-benefit-process-engine-sdd` 🔒 — 銀行權益服務
+- `accounting` 🔒 · `account` 🔒 · `position` 🔒 — 會計／帳務／部位
+- `aml` 🔒 — 反洗錢 (AML)
+- `swift` 🔒 · `correspond-bank-balance` 🔒 · `notification-of-credit` 🔒 · `inward-remittance` 🔒 — 跨行匯兌／清算
+- `foundation` 🔒 · `electronicMedia` 🔒 · `flow-mgmt` 🔒 — 共用基礎／流程管理
+- `FBPoC202109` 🔒 — 金融業 PoC
+
+### 其他應用
+- `stock-folio` 🔒 — 股票投資組合
+- `surgeryRecord` 🔒 — 手術紀錄系統
+- `azure-spring-cloud-config` 🔒 — Azure Spring Cloud 配置
+
 ---
 
 完整清單請參考 [GitHub](https://github.com/ChunPingWang)，或瀏覽部落格的[文章分類](/categories/)。
